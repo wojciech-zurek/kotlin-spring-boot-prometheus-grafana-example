@@ -44,7 +44,6 @@ Example:
         lastMessageLength = meterRegistry.gauge("service.message.last.message.length", AtomicInteger())!!
         //shows collection size (queue message, cache size etc...). In real app the collection implementation used should be thread safe.
         messages = meterRegistry.gaugeCollectionSize("service.message.message.size", emptyList(), mutableListOf())!!
-        messages.addAll(responses)
 
         //timer -> measures the time taken for short tasks and the count of these tasks.
         timer = meterRegistry.timer("service.message.long.operation.run.timer")
