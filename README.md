@@ -148,6 +148,7 @@ Docker and docker-compose
 
 ### Stack
  - kotlin
+ - gradle
  - spring boot 2.0 (mvc, actuator)
  - docker and docker-compose (I'm using Linux)
  - prometheus
@@ -192,11 +193,11 @@ docker-compose up
 #### 5. Open Grafana dashboard
 and add Prometheus type, direct access source (HTTP URL: http://localhost:9000/)
 
-#### 5. Test app and check metrics
+#### 6. Test app and check metrics
 ```bash
 curl http://localhost:8080/message
 Hello Spring World%                               
 ```
-#### 6. Optional upload example dashboard
+#### 7. Optional upload example dashboard
 
 Go to: [http://localhost:3000/dashboard/import](http://localhost:3000/dashboard/import) and import [grafana-spring-boot-example.json](/grafana-spring-boot-example.json)
