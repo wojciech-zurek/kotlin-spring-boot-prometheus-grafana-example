@@ -185,19 +185,29 @@ cd kotlin-spring-boot-prometheus-grafana-example/
 docker-compose up
 ```
 
-#### 4. Services URL
+#### 4. Check docker containers status
+
+```bash
+docker ps
+CONTAINER ID        IMAGE                                                COMMAND                  CREATED             STATUS              PORTS                                      NAMES
+449f44b8a1d5        eu.wojciechzurek/custom-prometheus:latest            "/bin/prometheus --c…"   41 minutes ago      Up 41 minutes       0.0.0.0:9090->9090/tcp                     kotlinspringbootprometheusgrafanaexample_prometheus_1
+348e2b0150be        grafana/grafana                                      "/run.sh"                41 minutes ago      Up 41 minutes       0.0.0.0:3000->3000/tcp                     kotlinspringbootprometheusgrafanaexample_grafana_1
+ab91021df26b        eu.wojciechzurek/spring-boot-example-metric:latest   "java -Djava.securit…"   41 minutes ago      Up 41 minutes       0.0.0.0:8080->8080/tcp                     spring-boot-example-metric
+```
+
+#### 5. Services URL
  - example spring boot controller: http://localhost:8080/message 
  - Prometheus dashboard http://localhost:9000/ 
  - Grafana dashboard (**login: admin, password: admin**) http://localhost:3000/ 
 
-#### 5. Open Grafana dashboard
+#### 6. Open Grafana dashboard
 and add Prometheus type, direct access source (HTTP URL: http://localhost:9000/)
 
-#### 6. Test app and check metrics
+#### 7. Test app and check metrics
 ```bash
 curl http://localhost:8080/message
 Hello Spring World%                               
 ```
-#### 7. Optional upload example dashboard
+#### 8. Optional upload example dashboard
 
 Go to: [http://localhost:3000/dashboard/import](http://localhost:3000/dashboard/import) and import [grafana-spring-boot-example.json](/grafana-spring-boot-example.json)
