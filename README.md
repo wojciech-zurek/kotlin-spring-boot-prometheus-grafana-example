@@ -1,4 +1,4 @@
-# Spring Boot metrics with Actuator, Prometheus and Grafana example
+# Spring Boot 2.0 metrics with Actuator, Prometheus and Grafana example
 
 ![dashboard](readme/dashboard.png "Dashboard")
 
