@@ -1,0 +1,16 @@
+version: '3'
+services:
+  spring-boot-app:
+    container_name: spring-boot-example-metric
+    hostname: spring-boot-example-metric
+    image: eu.wojciechzurek/spring-boot-example-metric:latest
+    ports:
+      - "8080:8080"
+  prometheus:
+    image: eu.wojciechzurek/custom-prometheus:latest
+    ports:
+      - "9090:9090"
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
